@@ -7,7 +7,6 @@ import 'movie_detail.dart';
 class MovieList extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return MovieListState();
   }
 }
@@ -27,7 +26,6 @@ class MovieListState extends State<MovieList> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       appBar: AppBar(
         title: Text("Popular movies"),
@@ -60,7 +58,8 @@ class MovieListState extends State<MovieList> {
             child: InkWell(
               child: Image.network(
                 'https://image.tmdb.org/t/p/w185${item.poster_path}',
-                fit: BoxFit.cover,
+                fit: BoxFit.fitWidth,
+                alignment: Alignment.topCenter,
               ),
               onTap: () => openDetailPage(snapshot.data, index),
             ),
@@ -76,7 +75,7 @@ class MovieListState extends State<MovieList> {
             data.results[index].overview,
             data.results[index].release_date,
             data.results[index].title,
-            data.results[index].vote_average.toString(),
+            data.results[index].vote_average,
             data.results[index].id),
       );
     }));

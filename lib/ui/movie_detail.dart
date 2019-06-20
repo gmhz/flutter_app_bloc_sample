@@ -9,7 +9,7 @@ class MovieDetail extends StatefulWidget {
   final description;
   final releaseDate;
   final String title;
-  final String voteAverage;
+  final double voteAverage;
   final int movieId;
 
   MovieDetail(this.posterUrl, this.description, this.releaseDate, this.title,
@@ -25,7 +25,7 @@ class MovieDetailState extends State<MovieDetail> {
   final description;
   final releaseDate;
   final String title;
-  final String voteAverage;
+  final double voteAverage;
   final int movieId;
 
   MovieDetailBloc bloc;
@@ -84,7 +84,7 @@ class MovieDetailState extends State<MovieDetail> {
                       margin: EdgeInsets.only(left: 1, right: 1),
                     ),
                     Text(
-                      voteAverage,
+                      "$voteAverage",
                       style: TextStyle(fontSize: 18),
                     ),
                     Container(
@@ -199,6 +199,7 @@ class MovieDetailState extends State<MovieDetail> {
                     child: Icon(
                       Icons.play_circle_filled,
                       color: Colors.grey,
+                      size: 40,
                     ),
                   ),
                 ),
